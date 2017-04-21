@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">数字杭电3.0</string>
+    <string name="hello_world">欢迎来到杭电!</string>
+    <string name="action_settings">Settings</string>
+    
+    <!--mainActivity-->
+    <string name="Button1">注册</string>
+    <string name="Button2">杭电实景</string>
+    <string name="jm">记住密码</string>
+    
+    
+
+</resources>
