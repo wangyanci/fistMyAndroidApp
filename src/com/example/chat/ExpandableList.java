@@ -26,6 +26,7 @@ import android.widget.TabHost;
 import android.widget.TextView;
 import android.widget.Toast;
 import android.widget.ExpandableListView.OnChildClickListener;
+import android.widget.TabHost.OnTabChangeListener;
 import android.widget.TabHost.TabSpec;
 
 
@@ -36,13 +37,13 @@ public class ExpandableList extends  TabActivity{
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_chat);
 	
-TabHost tabHost=getTabHost();
+final TabHost tabHost=getTabHost();
 		
 		
-		TabSpec tab1=tabHost.newTabSpec("tab1").setIndicator("聊天").setContent(R.id.tab01);
+		TabSpec tab1=tabHost.newTabSpec("tab1").setIndicator("聊天").setContent(R.id.lv);
 		tabHost.addTab(tab1);
 		
-		TabSpec tab2=tabHost.newTabSpec("tab2").setIndicator("联系人").setContent(R.id.tab03);
+		TabSpec tab2=tabHost.newTabSpec("tab2").setIndicator("联系人").setContent(R.id.expandableListview);
 		tabHost.addTab(tab2);
 		
 		TabSpec tab3=tabHost.newTabSpec("tab3").setIndicator("空间").setContent(R.id.tab03);
@@ -56,9 +57,8 @@ TabHost tabHost=getTabHost();
 		
 		
 		
-		
-		
-		
+	
+
 		
 		
 		final ExpandableListAdapter madapter = new BaseExpandableListAdapter() {  
