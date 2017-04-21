@@ -41,7 +41,7 @@
          
             <activity
           
-                android:name="com.example.chat.ChatActivity"
+                android:name="com.example.chat.ExpandableList"
                 android:label="主页"
             
              >

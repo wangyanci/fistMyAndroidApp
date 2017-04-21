@@ -4,7 +4,8 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
-import com.example.chat.ChatActivity;
+import com.example.chat.ExpandableList;
+
 import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.content.Intent;
@@ -166,7 +167,7 @@ public class MainActivity extends Activity implements OnClickListener {
         }
  
         Intent intent=new Intent();
-		intent.setClass(this, ChatActivity.class);
+		intent.setClass(this, ExpandableList.class);
 		startActivity(intent);
     }
     

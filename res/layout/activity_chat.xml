@@ -53,7 +53,12 @@
                      android:orientation="vertical"
                        android:layout_height="fill_parent"
                    > 
-                    
+                    <ExpandableListView 
+    android:id="@+id/expandableListview "
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    
+    ></ExpandableListView>
                     </LinearLayout> 
                     
                                   
