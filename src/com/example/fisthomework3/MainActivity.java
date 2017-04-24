@@ -16,7 +16,6 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.ViewGroup.LayoutParams;
 import android.view.WindowManager;
-import android.view.animation.ScaleAnimation;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
 import android.widget.ArrayAdapter;
@@ -33,7 +32,7 @@ import come.example.fireedittext.FireworkView;
 
 @SuppressLint("CutPasteId")
 public class MainActivity extends Activity implements OnClickListener {
-	 
+	
     private ImageView select;
     private PopupWindow pw;
     private int width, i;
@@ -44,14 +43,14 @@ public class MainActivity extends Activity implements OnClickListener {
     private CheckBox checkBox;
     private SharedPreferences sPreferences;
     private Map<String, String> map;
- 
-    @Override
+
+    
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
   
         
-       
+        
  
   
         init();

@@ -46,6 +46,11 @@
             
              >
                </activity>
+               
+            <activity 
+                android:name="com.example.chat.PingfenActivity"
+                 android:label="动态"
+                ></activity>
            
     </application>
 

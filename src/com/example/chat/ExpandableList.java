@@ -1,37 +1,54 @@
 package com.example.chat;
 
+import java.security.PublicKey;
+import java.sql.Date;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.zip.Inflater;
 
 import com.example.fisthomework3.R;
-
+import com.example.fisthomework3.R.layout;
 import com.example.swipmemulistview.SlideAdapter;
 import com.example.swipmemulistview.SlideListView;
 
+import android.R.string;
 import android.app.Activity;
 import android.app.TabActivity;
+import android.content.DialogInterface;
+import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.view.Gravity;
+import android.view.LayoutInflater;
 import android.view.View;
+import android.view.View.OnClickListener;
 import android.view.ViewGroup;
 import android.widget.AbsListView;
 import android.widget.BaseExpandableListAdapter;
 import android.widget.ExpandableListAdapter;
 import android.widget.ExpandableListView;
 import android.widget.LinearLayout;
+import android.widget.ListView;
+import android.widget.ScrollView;
+import android.widget.SimpleAdapter;
 import android.widget.TabHost;
 import android.widget.TextView;
 import android.widget.Toast;
 import android.widget.ExpandableListView.OnChildClickListener;
+import android.widget.ImageView;
 import android.widget.TabHost.OnTabChangeListener;
 import android.widget.TabHost.TabSpec;
 
 
-public class ExpandableList extends  TabActivity{
+public class ExpandableList extends  TabActivity implements OnClickListener{
 	
+	private View myView;
+
+
+
+
 	@SuppressWarnings("deprecation")
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -56,10 +73,27 @@ final TabHost tabHost=getTabHost();
 		slideListView .setAdapter(adapter);
 		
 		
+		ScrollView scrollView=(ScrollView) findViewById(R.id.tab03);
+		 myView=LayoutInflater.from(this).inflate(R.layout.activity_scrollview,null);
+        scrollView.addView(myView);
 		
+      
+        
+        ImageView iv1=(ImageView) myView.findViewById(R.id.iv1);
+	ImageView iv2=(ImageView) myView.findViewById(R.id.iv2);
+	ImageView iv3=(ImageView) myView.findViewById(R.id.iv3);
 	
+	TextView tv8=(TextView) myView.findViewById(R.id.tv8);
+	TextView tv9=(TextView) myView.findViewById(R.id.tv9);
+	TextView tv7=(TextView) myView.findViewById(R.id.tv7);
+	tv7.setOnClickListener(this);
+	tv8.setOnClickListener(this);
+	tv9.setOnClickListener(this);
 
-		
+
+
+
+	
 		
 		final ExpandableListAdapter madapter = new BaseExpandableListAdapter() {  
             //设置组视图的图片  
@@ -235,7 +269,83 @@ final TabHost tabHost=getTabHost();
 			 list.add(map);
 			}
 		return list;
+		
 	}
 
 
-}
+
+		@Override
+		public void onClick(View v) {
+			// TODO Auto-generated method stub
+			switch(v.getId()){
+			case(R.id.tv7):
+				int a=R.drawable.p1;
+			Intent intent=new Intent();
+			intent.putExtra("picture", a);
+			   intent.setClass(this, PingfenActivity.class);
+			startActivityForResult(intent, 777);
+			break;
+			
+		case(R.id.tv8):
+			int b=R.drawable.p2;
+		Intent intent2=new Intent();
+		intent2.putExtra("picture", b);
+		   intent2.setClass(this, PingfenActivity.class);
+		startActivityForResult(intent2, 888);
+		break;
+    
+           case(R.id.tv9):
+	       int c=R.drawable.p3;
+           
+           Intent intent3=new Intent();
+             intent3.putExtra("picture", c);
+             intent3.setClass(this, PingfenActivity.class);
+              startActivityForResult(intent3, 999);
+              break;
+			}
+		}
+
+
+
+		
+		@Override
+		protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+			// TODO Auto-generated method stub
+			super.onActivityResult(requestCode, resultCode, data);
+			
+			if(resultCode==777){
+				String fenshu=data.getStringExtra("pingfen");
+				TextView tv7=(TextView) myView.findViewById(R.id.tv7);
+				tv7.setText("评分为："+fenshu);
+			}
+			
+			if(resultCode==888){
+				String fenshu=data.getStringExtra("pingfen");
+				TextView tv8=(TextView) myView.findViewById(R.id.tv8);
+				tv8.setText("评分为："+fenshu);
+			}
+			
+			if(resultCode==999){
+				String fenshu=data.getStringExtra("pingfen");
+				TextView tv9=(TextView) myView.findViewById(R.id.tv9);
+				tv9.setText("评分为："+fenshu);
+			}
+		}
+	
+		
+}	
+	
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+
+
