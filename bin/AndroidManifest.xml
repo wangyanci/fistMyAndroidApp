@@ -41,11 +41,16 @@
          
             <activity
           
-                android:name="com.example.chat.ChatActivity"
+                android:name="com.example.chat.ExpandableList"
                 android:label="主页"
             
              >
                </activity>
+               
+            <activity 
+                android:name="com.example.chat.PingfenActivity"
+                 android:label="动态"
+                ></activity>
            
     </application>
 
